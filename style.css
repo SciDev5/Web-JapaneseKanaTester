@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700;900&family=Noto+Serif+JP:wght@500;900&display=swap');
+
+body {
+  font-family: "Noto Sans JP";
+  margin: 0px;
+}
+
+
+
+.-placeholder-contain-inline-tests- {
+  padding: 5px 5px 8px 8px;
+  display: block;
+  width: calc(100% - 30px * 2);
+  margin: 30px;
+  border-radius: 4px;
+  border: 2px #f7f7f7 solid;
+  box-sizing: border-box;
+}
+
+/* ------ [TEST] CHARACTERS WRITTEN ------ */
+
+.tcw {
+  display: inline-block;
+  width: 200px;
+  background: #eeeeee;
+  padding: 10px;
+  animation: tcw-in 0.3s both;
+  clip-path: polygon(0px 25px, 25px 0px, 110% 0%, 110% 110%, 0% 110%);
+  border-right: 2px solid #00000011;
+  border-bottom: 2px solid #00000011;
+  box-shadow: 4px 4px #efefef;
+  margin: 5px;
+}
+.tcw-question {
+  text-align: center;
+  display: block;
+  font-size: 3em;
+  padding-bottom: 20px;
+  animation: tcw-q-in 0.3s both;
+}
+.tcw-answer {
+  width: -webkit-fill-available;
+  border: none;
+  border-bottom: 2px solid #adadad;
+  outline: none;
+  background: #f7f7f7f7;
+  font-size: 2em;
+  text-align: center;
+  color: inherit;
+  animation: tcw-a-in 0.3s both;
+}
+.tcw-name {
+  font-size: 0.8em;
+  text-align: center;
+  display: block;
+}
+
+.tcw-anim-correct {
+  animation: tcw-correct 1s both;
+}
+.tcw-anim-correct .tcw-answer {
+  animation: tcw-a-correct 1s both;
+}
+.tcw-anim-correct .tcw-question {
+  animation: tcw-q-correct 1s both;
+}
+
+.tcw-anim-incorrect {
+  animation: tcw-incorrect 2s both;
+}
+.tcw-anim-incorrect .tcw-answer{
+  animation: tcw-a-incorrect 2s both;
+}
+.tcw-anim-incorrect .tcw-question {
+  animation: tcw-q-incorrect 2s both;
+}
+/* SETTINGS */
+.tcw-settings {
+    display: block;
+    mix-blend-mode: multiply;
+    width: 100%;
+    background: #f3f3f3;
+    text-align: center;
+    color: #454545;
+    margin-top: 10px;
+    padding: 3px;
+    box-sizing: border-box;
+    transition: background 0.3s;
+}
+
+.tcw-settings:hover {
+    background: #e7e7e7;
+}
+
+/* IN ANIMATION */
+@keyframes tcw-in {}
+@keyframes tcw-a-in {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes tcw-q-in {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* CORRECT ANIMATION */
+@keyframes tcw-correct {
+  20% {
+    color: #0a6742;
+    background: #d9f9dc;
+  }
+  100% {
+    color: #0a6742;
+    background: #d9f9dc;
+  }
+}
+@keyframes tcw-a-correct {
+  20% {
+    border-color: #99c2a8;
+    background: hsl(128deg 100% 95% / 97%);
+  }
+  85% {
+    transform: scaleX(1);
+  }
+  100% {
+    border-color: #99c2a8;
+    background: hsl(128deg 100% 95% / 97%);
+    transform: scaleX(0);
+  }
+}
+@keyframes tcw-q-correct {
+  85% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+/* INCORRECT ANIMATION */
+@keyframes tcw-incorrect {
+  10% {
+    color: #934c4c;
+    background: #fbb6b6;
+  }
+  100% {
+    color: #934c4c;
+    background: #fbb6b6;
+  }
+}
+@keyframes tcw-a-incorrect {
+  10% {
+    border-color: #c98080;
+    background: #fecccc;
+  }
+  85% {
+    transform: scaleX(1);
+  }
+  100% {
+    border-color: #c98080;
+    background: #fecccc;
+    transform: scaleX(0);
+  }
+}
+@keyframes tcw-q-incorrect {
+  85% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+/* ------ SETTINGS GUI ------ */
+
+#settings-background {
+  background: #ffffff;
+  opacity: 0.6;
+  display: block;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+#settings-container {
+  display: block;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  text-align: center;
+  padding: 50px calc(50% - 200px);
+}
+#settings-container > * {
+  text-align: left;
+}
+
+.settings span {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+
+
+
+.settings {
+    border: 2px solid #888888;
+    background: #d8d8d8;
+}
+
+.settings-title {
+    padding: 4px 10px 6px 10px;
+    box-sizing: border-box;
+    width: 80%;
+    display: inline-block;
+    vertical-align: top;
+}
+.settings-header {
+    padding: 2px 10px 4px 10px;
+    box-sizing: border-box;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.settings-close-button {
+    padding: 4px 10px 6px 10px;
+    display: inline-block;
+    width: 20%;
+    box-sizing: border-box;
+    text-align: center;
+    background: #cbcbcb;
+    vertical-align: top;
+}
+
+.settings-close-button:hover {
+    background: #c0c0c0;
+}
+
+.settings-boollist-row {
+    padding: 1px 1px;
+    background: #e2e2e2;
+}
+
+span.settings-boollist-label {
+    width: 353px;
+    padding: 0px 10px;
+    display: inline-block;
+}
