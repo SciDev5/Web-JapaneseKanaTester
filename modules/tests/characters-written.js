@@ -123,7 +123,7 @@ class CharTextTest {
     this.elt.question.innerText = this.set[this.current.questionId].question;
     this.elt.question.style.fontFamily = this.current.font;
     this.elt.answer.value = "";
-    this.elt.answer.focus();
+    //this.elt.answer.focus();
   }
   
   getNextQuestion() {
